@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Webcams App</title>
+  <link rel="manifest" href="data:application/json,{"name":"Webcams App","short_name":"Webcams","start_url":".","display":"standalone","background_color":"#000000","theme_color":"#000000"}">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Webcams">
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      text-align: center;
+    }
+    .webcam {
+      margin: 10px 0;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #000;
+    }
+    iframe, img {
+      width: 100%;
+      height: 100%;
+      border: none;
+      object-fit: contain;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+  <!-- Kanaren -->
+  <iframe class="webcam" src="https://www.youtube-nocookie.com/embed/GkC5icowohI?autoplay=1&mute=1&playsinline=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <iframe class="webcam" src="https://www.youtube-nocookie.com/embed/NllLJx19ftg?autoplay=1&mute=1&playsinline=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <iframe class="webcam" src="https://www.youtube-nocookie.com/embed/AAlo3eCPVbk?autoplay=1&mute=1&playsinline=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+  <!-- Adams Beach -->
+  <iframe class="webcam" src="https://www.youtube-nocookie.com/embed/Y24hCTGrXxw?autoplay=1&mute=1&playsinline=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <iframe class="webcam" src="https://v.angelcam.com/iframe?v=6xbrmzpy2z&autoplay=1&mute=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <iframe class="webcam" src="https://v.angelcam.com/iframe?v=kjzl17j0ln&autoplay=1&mute=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+  <!-- Pilatus -->
+  <iframe class="webcam" src="https://pilatus.roundshot.com/#/" allowfullscreen></iframe>
+  <iframe class="webcam" src="https://pilatus.roundshot.com/fraekmuentegg/#/" allowfullscreen></iframe>
+  <img id="webcam" class="webcam" src="" alt="Webcam Krienseregg">
+
+  <!-- Bellwald -->
+  <iframe class="webcam" src="https://bellwaldtourismus.roundshot.com/bellwald/#/" allowfullscreen></iframe>
+  <iframe class="webcam" src="https://bellwaldtourismus.roundshot.com/fleschen/#/" allowfullscreen></iframe>
+  <iframe class="webcam" src="https://bellwaldtourismus.roundshot.com/furggulti/#/" allowfullscreen></iframe>
+
+  <script>
+    // Service worker registration (inline PWA support)
+    if ('serviceWorker' in navigator) {
+      const swCode = `self.addEventListener('install', e => self.skipWaiting()); self.addEventListener('fetch', e => {});`;
+      const blob = new Blob([swCode], { type: 'text/javascript' });
+      const swURL = URL.createObjectURL(blob);
+      navigator.serviceWorker.register(swURL);
+    }
+
+    // Webcam reload
+    function reloadWebcam() {
+      const img = document.getElementById('webcam');
+      img.src = "https://old.pilatus.ch/webcam/kegg-2.jpg?t=" + new Date().getTime();
+    }
+    reloadWebcam();
+    setInterval(reloadWebcam, 30000);
+  </script>
+</body>
+</html>
