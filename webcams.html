@@ -1,1 +1,103 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Webcams</title>
+  <style>
+    html, body { height:100%; margin:0; background:#000; }
+    .wrap { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; height:100%; padding:10px; box-sizing:border-box; }
+    video, iframe { width:100%; height:100%; object-fit:contain; background:#000; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+
+<!-- 1. Zeile Kanaren -->
+
+
+    <iframe src="https://www.youtube.com/embed/GkC5icowohI?autoplay=1&mute=1"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+    </iframe>
+
+
+  
+    <iframe src="https://www.youtube.com/embed/AfD16cDYBbE?autoplay=1&mute=1"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+    </iframe>
+
+
+ <iframe src="https://www.youtube.com/embed/AAlo3eCPVbk?autoplay=1&mute=1"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+    </iframe>
+
+
+<!-- 2. Zeile Adams Beach /  -->
+
+
+ <iframe src="https://www.youtube.com/embed/Y24hCTGrXxw?autoplay=1&mute=1"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+    </iframe>
+
+
+ <iframe src="https://v.angelcam.com/iframe?v=6xbrmzpy2z&token=eyJ0eXAiOiJKV1QiLCJh..."
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+
+ <iframe src="https://v.angelcam.com/iframe?v=kjzl17j0ln&token=eyJ0eXAiOiJKV1QiLCJh..."
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+
+
+
+
+<!-- 3. Zeile Pilatus -->
+
+
+<iframe src="https://pilatus.roundshot.com/#/" frameborder="0"  allowfullscreen></iframe>
+
+<iframe src="https://pilatus.roundshot.com/fraekmuentegg/#/" frameborder="0" allowfullscreen></iframe>
+
+
+<img 
+    id="webcam"
+    src=""
+    alt="Webcam Krienseregg" 
+    width="100%" 
+    height="auto" 
+    style="display:block; margin:0 auto;">
+
+<script>
+    const img = document.getElementById('webcam');
+    img.src = "https://old.pilatus.ch/webcam/kegg-2.jpg?t=" + new Date().getTime();
+</script>
+
+
+
+<!-- 4. Zeile Bellwald -->
+
+
+<iframe src="https://bellwaldtourismus.roundshot.com/bellwald/#/" frameborder="0"  allowfullscreen></iframe>
+
+<iframe src="https://bellwaldtourismus.roundshot.com/fleschen/#/" frameborder="0" allowfullscreen></iframe>
+
+<iframe src="https://bellwaldtourismus.roundshot.com/furggulti/#/" frameborder="0" allowfullscreen></iframe>
+
+
+
+
+
+    
+  </div>
+</body>
+</html>
 
